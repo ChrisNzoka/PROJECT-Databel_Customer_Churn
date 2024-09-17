@@ -1,0 +1,112 @@
+Data preparation
+
+Before we do any analysis, the first step is to ensure that our data is prepared. First, we'll verify the data with a simple check - in this step we'll put our data in a table format and then investigate whether there are any duplicate rows in our customer level data.
+
+In this case study, we'll be working with two different datasets in the following worksheets:
+Databel - Aggregate
+Databel - Customer. 
+
+First we'll focus on our customer level data before working with aggregate data later in the case study. The aggregate views are based on data in Databel - Customer.
+
+Step 1: Navigate to Databel - Aggregate and convert the range of data ($A$1:$U$6670) into a tabular format.
+Rename this table "Aggregate".
+
+Step 2: Navigate to Databel - Aggregate and convert the range of data ($A$1:$U$6670) into a tabular format.
+Rename this table "Aggregate".
+
+Step 3: Identify whether there are any duplicate values in the Customers table, there are two approaches that we can use:
+- Remove duplicates feature
+- Conditional formatting
+
+
+Calculating churn
+
+It will be extremely useful to have a measure that calculates churn before deep-diving into the analysis. There is a column called Churn Label that indicates "Yes" or "No", but this column isn't the easiest to work with.
+
+We'll convert this column to a binomial column indicating if the customer churned or not. We need to use that to calculate the churn rate.
+
+Step 1: Create a new column "Churned" in our Customers table that uses an IF() to convert the values in Churn Label based on the following criteria:
+
+"Yes" then 1
+"No" then O
+
+Step 2: Create a blank PivotTable of the Customers table and place it in a new Worksheet. Rename this worksheet "Customer Pivots".
+
+Step 3: In the PivotTable, display the total count of customers and number of churned customers.
+Update the column headers to user-friendly names such as "Total Customers" and "Churned Customers".
+
+Great! Now we can easily identify how many customers have churned, but what if we want to find out what our churn rate is?
+
+Step 4: Next to the PivotTable, create a new calculation with the header "Churn Rate" that divides churned customers by total customers.
+Format this as a % to two decimal places.
+
+Investigating churn reasons
+
+The logical next step is to investigate the different reasons why customers churned. Our job is to create a column chart listing the different reasons why customers churn
+
+Step 1: Create a blank PivotTable of the Customers table in the Customer Pivots worksheet.
+
+Step 2: Analyze the total number of churned customers by Churn Reason.
+Rename the row header to "Churn Reason" and the column header to "Churned Customers".
+
+Step 3: Order the churn reasons ascending, to the most popular churn reason appears at the bottom .
+Show the Churned Customers as a "% of Grand Total".
+- To sort a PivotTable, right-click any value and navigate to Sort > More Sort Options.
+Sort Ascending (A to Z) by Churned Customers.
+- To convert Values in a PivotTable to "% of Grand Total", right-click on a cell > "Value field setting" and navigate the "Show Value As" > % of Grand Total.
+
+Step 4: Visualize the analysis with a 2D Bar Chart and title it "Churn Reasons".
+Hide all field buttons on chart and delete the Legend.
+
+Digging deeper into churn categories
+
+Churn Reasons are grouped together in the Churn Category column. It's our job to identify which churn category is accounting for the highest proportion of churn and understand which priority we should tackle first based on the churn reason.
+
+Step 1: Create a blank PivotTable of the Customers table in the Customer Pivots worksheet.
+
+Step 2: Analyze the total number of churned customers as % of grand total by Churn Category and Churn Reason.
+Rename the row header to "Churn Reason" and the column header to "Churned Customers".
+
+We can see that category driving the highest % of churn is Competitor.
+
+Step 3: Filter the PivotTable to only include this churn category.
+
+Analyzing demographics
+
+In this phase, we are tasked with analyzing the different demographic fields from the dataset. We'll be using our Excel skills to create a new field to analyze the data with and create our first calculated field in a PivotTable.
+
+Step 1: Navigate to Databel - Aggregate sheet.
+
+Step 2: We'd like to get further insight into the demographic variables relating to age.
+
+Create a new column "Demographics" next to the Group column using a nested IF() formulas that categorizes customers into the following categories: "Under 30", "Senior" and "Other".
+
+We can utilize the metadata sheet for additional information on variables.
+
+Step 3: Create a blank PivotTable of the Aggregate table and place it in a new Worksheet. Rename this worksheet "Churn Analysis".
+
+Step 4: In the PivotTable:
+Create a calculated field "Churn Rate %" that divides churned customers by total customers, then add it to the PivotTable.
+Format the calculated field as a % to two decimal places.
+
+We'll be able to re-use this calculated field throughout our analysis.
+
+Step 5: Now let's break this out even further and analyze churn by Demographics.
+- Drag Demographics to the Rows section.
+
+Age groups
+
+Previously, we found a great insight that senior citizens churn more often. This suggests that it might be a good idea to analyze the customer age in general.
+Our job is to create different age bins and make a combo chart visualizing the number of customers per bracket and their respective churn rates.
+
+Step 1: Create a copy of the PivotTable from the previous exercise in the Churn Analysis sheet.
+Replace Demographics with Age in Rows and add Total Customers to Values.
+
+Step 2: Create groups for Age with a split of 10
+
+To group rows in a PivotTable, right-click any value and navigate to Group…
+The grouping will automatically work out the start and end values, leave these and set a grouping size in the By: section.
+
+Step 3: Create a line and clustered column chart(combo chart) that shows the number of customers and churn rate for every age bracket.
+
+Step 4: Format your chart and make the graph visually appealing.
