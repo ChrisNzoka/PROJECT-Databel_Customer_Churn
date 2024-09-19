@@ -110,3 +110,123 @@ The grouping will automatically work out the start and end values, leave these a
 Step 3: Create a line and clustered column chart(combo chart) that shows the number of customers and churn rate for every age bracket.
 
 Step 4: Format your chart and make the graph visually appealing.
+
+Unlimited plan
+
+Databel has a hypothesis that people who are not on an unlimited data plan are more likely to churn. Our task is to investigate how the Unlimited Data Plan influences the churn rate.
+
+Step 1: Create a PivotTable in Churn Analysis based on the Aggregate table that analyses the total number of customers who have an unlimited data plan, as well as the churn rate.
+
+It appears that customers who are on an unlimited plan are more likely to churn. To see if it is related to a certain amount of mobile data (GB) being used, we'll proceed to Step 2.
+
+Step 2: Create a new column in Databel - Aggregate called "Grouped Consumption" that classifies the average monthly GB download in the following groups:
+
+Less than 5 GB.
+Between 5 and 10 GB.
+10 or more GB.
+
+Step 3: Refresh the PivotTable and re-arrange the table to analyze churn rate by Unlimited Data Plan and Grouped Consumption.
+
+Step 4: Create a stacked bar or column chart to visualize Churn Rate by Unlimited Data Plan and broken out by average consumption levels.
+Format the chart and make the graph visually appealing.
+
+International calls
+
+The analysis requirement given by Databel includes a request to analyze the relationship between customers' international activity and churn. They are curious about the behavior of customers who call internationally, and if paying for an international plan influences their loyalty.
+
+Step 1: Create a PivotTable in Churn Analysis based on the Aggregate table that displays a matrix of churn rate by State and whether a customer is on an Intl Plan.
+
+Step 2: Remove grand-totals from the PivotTable.
+
+Hint
+Click on the PivotTable to make sure the PivotTable Analyze and Design ribbon bar is showing.
+Under the Design ribbon click Grand Totals, then Off for Rows and Columns.
+
+Step 3: Apply a Red - Yellow - Green colour scale on the churn rate values within the PivotTable.
+
+Hint
+- Highlight all cells that we need to apply conditional formatting on.
+- Under Home click on Conditional Formatting, then Color Scales and select the appropriate scale to display high churn rates in red and low churn rates in green.
+
+Contract type
+
+Databel also wants to improve its customer service since there have been some reported issues. Our job is to investigate two important topics related to customers:
+- the contract type, and 
+- how many months a person is a customer.
+
+Step 1: Create a PivotTable in Churn Analysis based on the Aggregate table that displays churn rate based on the customers account length.
+Remove Grand Totals from the PivotTable.
+
+Step 2: Create groups for Account Length (in months) with a split of 12.
+Hint
+- To group rows in a PivotTable, right-click any value and navigate to Group…
+- The grouping will automatically work out the start and end values, leave these and set a grouping size in the By: section.
+
+It seems the churn rate does decrease over time. 
+
+Step 3: Now, investigate how this decrease behaves through the different types of contracts.
+
+Hint
+Drag Contract Type to Columns.
+
+Overview - Adding KPIs
+
+Now that we've created a series of visuals and pivot tables, we need to collate this information to provide the best insights possible to address any key concerns around churn.
+
+In this phase, we'll start by preparing our dashboard sheet to display key information such as total customers, number of churned customers and churn rate.
+
+Step 1: Create a new worksheet called "Overview" and remove the gridlines from the sheet.
+
+Step 2: Create the following headers in cells B2, C2 and D2:
+
+- Total Customers
+- Churned Customers
+- Churn Rate %
+
+Step 3: Under each header input the KPIs from our Customer Analysis that we completed earlier. We can use cell references or manually enter the data in.
+
+Step 4: Apply formatting and styling to the KPIs to make them visually appealing.
+
+Overview - Adding churn reasons
+
+We've added the first key data points in our overview page. Now let's add some context into why our customers are churning with a particular focus on customers who churn as a result of our competitors activities.
+
+Step 1: Add a visualization that shows the breakdown of churn rate based on the reason customers provided
+Hint:
+- selct a chart type and pick the data from the appropriate sheet.
+
+Step 2: Since competitor gets highlighted a lot in our previous visual, let's focus on this category.
+
+Add a visualization that shows a filtered view of Churn Category based on 'Competitor' with Churn Rate % and Churn Reason visible.
+
+Step 3: Apply formatting and styling to your visuals for consistent branding with your KPIs.
+
+Overview - Adding demographics
+
+Our dashboard is looking great so far! Now let's provide some context into the demographics of our churned customers to help the business understand what customers we need to prioritize our retention efforts.
+
+Step 1:
+- Create a visualization of our choice to display the Churn Rate of the Demographic groups. We can use the PivotTable created earlier to achieve this.
+- Clean this visual up by removing unnecessary components such as field buttons and apply any style customizations.
+
+Step 2: Add a visualization that shows the breakdown of customers and churn rate based on age ranges.
+
+Overview - Adding consumption
+
+We're almost finished! We now need to add the finishing touches by including our consumption data.
+
+Step 1: Add a visualization that shows the breakdown of churn based on the average amount of data the customer uses.
+- Apply formatting and styling to your visuals for consistent branding with your dashboard.
+
+Step 2:
+- Create a copy of the table matrix that displays churn rate by state and international plan into the Overview page.
+- Update the PivotTable with a filter to only include those on an international plan.
+- Sort the PivotTable by highest to lowest churn rate.
+
+Step 3: Apply a value filter that only displays the top 25 states based on the highest churn rate.
+
+
+
+
+
+
